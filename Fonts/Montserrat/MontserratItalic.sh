@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Font download URL
-font_url='https://raw.githubusercontent.com/TecharyAdam/TecharyMacOSScripts/refs/heads/main/Fonts/DMSerif/MontserratItalic.ttf'
+font_url='https://raw.githubusercontent.com/TecharyAdam/TecharyMacOSScripts/refs/heads/main/Fonts/Montserrat/MontserratItalic.ttf'
 
 # Check if the font file already exists in /Library/Fonts
 if [ -f "/Library/Fonts/MontserratItalic.ttf" ]; then
