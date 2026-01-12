@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Font download URL
-font_url='https://raw.githubusercontent.com/TecharyAdam/TecharyMacOSScripts/refs/heads/main/Fonts/DMSans/DMSans-VariableFont_opsz%2Cwght.ttf'
+font_url='
+https://raw.githubusercontent.com/TecharyAdam/TecharyMacOSScripts/refs/heads/main/Fonts/DMSans/DMSansStandard.ttf'
 
 # Check if the font file already exists in /Library/Fonts
 if [ -f "/Library/Fonts/DMSansStandard.ttf" ]; then
