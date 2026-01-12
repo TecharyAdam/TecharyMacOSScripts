@@ -1,17 +1,26 @@
 #!/bin/bash
-#set -x
 
-# Define variables
-fonturl=”<Provide file URL>”
-Fontdir=”Provide location to dowload font”
-Fontname=”<File Name>.ttf/otf”
-log=”/var/log/<Log Name>.log”
+# Font download URL
+font_url='https://cloudinfrasa01.blob.core.windows.net/fonts/JulieRegular.ttf'
 
-# start logging
-exec 1>> $log 2>&1
+# Check if the font file already exists in /Library/Fonts
+if [ -f "/Library/Fonts/JulieRegular.ttf" ]; then
+  echo "Font already exists in /Library/Fonts. No need to download."
+else
+  # Download the font to a temporary location
+  tmp_file="/tmp/JulieRegular.TTF"
+  curl -o "$tmp_file" "$font_url"
 
-# Download the Font
-curl -L -o $Fontdir $fonturl
+  # Check if the download was successful
+  if [ $? -eq 0 ]; then
+    # Use sudo to copy the font to /Library/Fonts
+    sudo cp "$tmp_file" "/Library/Fonts/"
+    sudo chown root:wheel "/Library/Fonts/JulieRegular.TTF"
+    echo "Font copied to /Library/Fonts successfully."
+  else
+    echo "Failed to download the font."
+  fi
 
-# Install the Font
-cp -R $Fontdir/$Fontname /Library/Fonts/
+  # Clean up the temporary file
+  rm -f "$tmp_file"
+fi
