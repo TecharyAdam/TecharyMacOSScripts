@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Font download URL
-font_url='https://cloudinfrasa01.blob.core.windows.net/fonts/JulieRegular.ttf'
+font_url='https://raw.githubusercontent.com/TecharyAdam/TecharyMacOSScripts/refs/heads/main/Fonts/DMSans/DMSans-VariableFont_opsz%2Cwght.ttf'
 
 # Check if the font file already exists in /Library/Fonts
 if [ -f "/Library/Fonts/JulieRegular.ttf" ]; then
